@@ -1,0 +1,3 @@
+# Mirth Restful Web Services Adapter
+
+This application provides a layer of control between [Mirth Connect](http://www.mirthcorp.com/products/mirth-connect) and the [hQuery Gateway](http://projecthquery.org/). The layer accepts the record web service call from mirth, adjusts the parameter name from a random UUID assigned by mirth to the parameter name "content", and forwards it on to hQuery. This layer will also pass the record creation status code (or error code) back to Mirth.
