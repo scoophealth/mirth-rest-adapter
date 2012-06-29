@@ -103,6 +103,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler (= 1.2.0.pre.1)
   coffee-rails (~> 3.2.1)
   jquery-rails
   multipart-post

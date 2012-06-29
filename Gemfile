@@ -23,6 +23,7 @@ end
 
 gem 'jquery-rails'
 gem 'multipart-post'
+gem 'bundler', '1.2.0.pre.1'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
