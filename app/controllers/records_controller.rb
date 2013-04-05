@@ -5,13 +5,16 @@ class RecordsController < ApplicationController
   def relay
 
       file = File.new('temp_scoop_document.xml', 'w+')
-      file.write(params[params.keys[0]].read)
+      file.write(
+        (params[params.keys[0]].read).force_encoding("utf-8").encode("utf-8", "binary", :undef => :replace)
+      )
 
       file.close
 
       res = nil
 
-      url = URI.parse('http://young-water-9709.herokuapp.com/records/create')
+      #url = URI.parse('http://young-water-9709.herokuapp.com/records/create')
+      url = URI.parse('http://localhost:3001/records/create')
       File.open("temp_scoop_document.xml") do |xml|
         req = Net::HTTP::Post::Multipart.new url.path, "content" => UploadIO.new(xml, "text/xml", "temp_scoop_document.xml")
         res = Net::HTTP.start(url.host, url.port) do |http|
